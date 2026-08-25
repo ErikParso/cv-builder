@@ -1,0 +1,29 @@
+name: Erik Paršo
+# Headline shown under the name. Aim it at the job you want next, not the one you have.
+title: Senior Software Engineer · Microfrontend Architecture & Full-Stack
+
+location: Zilina, Slovakia
+email: parsoerik@gmail.com
+phone: "+421 948 861 957"
+
+links:
+  - label: GitHub
+    url: https://github.com/ErikParso
+  # TODO: add LinkedIn - recruiters look for it first and its absence is noticed.
+  # - label: LinkedIn
+  #   url: https://linkedin.com/in/...
+
+# Deliberately omitted: date of birth and street address.
+# They add no signal, and in most markets they are an anti-signal.
+# Add `dateOfBirth:` / `address:` here only if a specific employer demands it.
+
+# 3-4 lines. What you are, how long, what you are best at, what you want next.
+# This is the only part of the CV most recruiters read in full. Rewrite it per application.
+summary: >-
+  Software engineer with ~10 years shipping production software, specialising in
+  microfrontend architecture. Six years architecting and building Skoda Auto's
+  customer-facing applications as independently deployable microfrontends, then defining
+  that architecture from scratch for a games company's internal administration platform
+  and handing it to the team that now owns it. Now building
+  full-stack products around LLMs and real-time data. I like owning a problem from
+  architecture through to the thing running.

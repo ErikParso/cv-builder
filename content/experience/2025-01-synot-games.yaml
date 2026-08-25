@@ -1,0 +1,31 @@
+role: Software Architect & Software Developer
+company: Synot Games SK
+location: Bratislava, Slovakia
+start: 2025-01
+end: 2025-06
+
+# Ran in parallel with the Skoda Auto role. `concurrent` silences the overlap check;
+# `engagement` is what tells a human reader the same thing.
+concurrent: true
+engagement: Part-time
+
+summary: >-
+  Brought in to define the frontend architecture for Tercius, an internal administration
+  platform for game and client management, and to hand it over to a team that could carry
+  it on.
+
+highlights:
+  - Defined a microfrontend architecture so administration modules could be owned by
+    separate teams on independent release schedules, and so later modules stayed
+    consistent with the existing ones.
+  - Implemented the initial frontend against that architecture, establishing the patterns
+    the rest of the team built on.
+  - Built the platform's shared component library on MUI, including a comprehensive
+    data-table component on TanStack Table and MUI's table primitives, with the component
+    test suite covering it.
+  - Mentored 4 junior and mid-level frontend developers into ownership through
+    consultation, technical leadership and code review. They kept building modules on the
+    platform after handover.
+
+tech: [React, TypeScript, MUI, React Router, FeatureHub, TanStack Query, TanStack Table,
+       TanStack Form, Vite, Storybook, Cypress, ASP.NET Core, OAuth 2.0]

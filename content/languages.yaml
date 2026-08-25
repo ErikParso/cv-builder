@@ -1,0 +1,9 @@
+# The old Europass grid (separate levels for listening / reading / speaking / writing)
+# is noise. One line per language is the convention outside Europass forms.
+items:
+  - name: Slovak
+    level: Native
+  - name: English
+    level: B2
+  # - name: German
+  #   level: B1

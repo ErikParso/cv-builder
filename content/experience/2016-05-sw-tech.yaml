@@ -1,0 +1,16 @@
+role: Software Developer
+company: SW-TECH, s.r.o.
+location: Zilina, Slovakia
+start: 2016-05
+end: 2017-05
+
+# Hidden to buy vertical space for typography. The file stays so it can come back:
+# flip this to false. Note the CV then starts at KROS (2017), while the summary still
+# says "~10 years" - true (you started May 2016), just no longer shown on the page.
+hidden: true
+
+summary: >-
+  First development role. Built an application for executing database scripts and shared
+  libraries consumed by SharePoint applications.
+
+tech: [C#, .NET, WPF, TypeScript, Roslyn, SQL]

@@ -1,0 +1,41 @@
+# Copy this to `<start-date>-<slug>.yaml` (e.g. 2022-03-acme.yaml) to add a role.
+# Files starting with `_` are ignored by the builder. Ordering is by date, not filename.
+#
+# Required: role, company, start, end
+# Optional: client, location, engagement, concurrent, summary, highlights,
+#           projects, tech, hidden
+
+role: Job Title
+company: Company Name
+client: End client            # optional - for consultancy/contract work
+location: City, Country
+start: 2022-03                # YYYY-MM (or YYYY-MM-DD)
+end: present                  # `present` or YYYY-MM
+
+# Ran alongside another role? Say both of these. `concurrent` silences the overlap
+# check; `engagement` is what tells a human reader, and it renders next to the dates.
+# concurrent: true
+# engagement: Part-time       # or Contract / Freelance / Internship
+
+# hidden: true                # keep the file, drop it from this build
+
+summary: >-
+  One or two sentences: what the thing was and what you were there to do.
+
+highlights:
+  # Rules that make these land:
+  #   1. Past-tense verb first: Built / Designed / Cut / Led / Migrated / Shipped.
+  #      Never "Responsible for" or "-ing" openings.
+  #   2. One idea per bullet. If there's an "and" doing heavy lifting, split it.
+  #   3. Put a number in it wherever one honestly exists - latency, cost, volume,
+  #      team size, release frequency, accuracy, time saved.
+  #   4. 4-7 bullets for a current/major role, 2-3 for an older one.
+  #   5. No em-dashes. A bullet containing ": " must be a block scalar (`>-`),
+  #      otherwise YAML reads the text before the colon as a key.
+  - Verb + what you built + the effect it had.
+
+projects:                     # optional - only when one role covers several distinct products
+  - name: Product Name
+    description: One line.
+
+tech: [Thing, Other Thing]

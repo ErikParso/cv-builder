@@ -1,0 +1,66 @@
+role: Software Developer / Frontend Architect
+company: SIGP Systems
+client: Skoda Auto                 # rendered as "SIGP Systems - client: Skoda Auto"
+location: Zilina, Slovakia
+start: 2019-09
+end: 2026-04
+# Synot Games (2025-01 -> 2025-06) ran in parallel, part-time, and says so on its own
+# entry. Nothing to fix.
+
+summary: >-
+  Built Skoda Auto's customer-facing web applications end to end, from the ASP.NET Core
+  services through to the React microfrontends. Lead frontend voice on architecture and
+  technology choices in a team of four.
+
+highlights:
+  # The microfrontend approach itself was a Skoda-wide decision, not his - so this claims
+  # the applications, not the estate architecture. Do not upgrade that wording.
+  - Architected and developed new applications from scratch as microfrontends, each
+    independently deployable and embeddable into any Skoda market site.
+  - Introduced MUI in place of the team's hand-built components; Skoda later standardised
+    on MUI across its web estate.
+  - >-
+    Designed and maintained the shared libraries two teams built on: a common component
+    library, and services that kept unit formatting identical across every app.
+  - Built the custom microfrontend loaders that let third-party sites embed Skoda
+    applications into their own pages.
+  - Built and maintained CI/CD pipelines in Azure DevOps for build, release and hotfix
+    delivery.
+  - Led migrations off outdated dependencies and frameworks across active projects.
+
+projects:
+  # One line each - this is a past role now, and the current work needs the room.
+  # 25 markets is Erik's own figure for this app's rollout, not Skoda's corporate
+  # footprint (which is 100+ markets). Keep it as stated.
+  - name: Stock & Used Cars
+    description: >-
+      The team's main product. An ecommerce platform for new and used vehicle sales,
+      live in 25 markets, covering listing and search, vehicle detail and the full
+      online reservation process including accessory selection. Built both the ASP.NET
+      Core backend and the React frontend.
+  - name: Skoda Flow Web Library
+    description: >-
+      Company-wide React component library and MUI theme, consumed by up to 10 web
+      development teams. Contributed to its early development, proposing and implementing
+      global theme-level styling of base components in place of per-component styles, plus
+      the visual regression tests. That approach set the pattern the library kept.
+  - name: Skoda Forms
+    description: >-
+      Migration of Skoda's forms solution onto current technology: an admin dashboard for
+      authoring form definitions, and a microfrontend that renders them into any Skoda
+      site. Built the microfrontend and covered it with an extensive integration test
+      suite. Carries hundreds of unique custom forms across multiple importers.
+  - name: Dealer Locator
+    description: Google Maps microfrontend for finding dealers, embeddable in any site.
+  - name: Electromobility apps
+    description: >-
+      Charging time, Powerpass tariff recommendation, and fossil-vs-electric running-cost
+      comparison.
+  - name: Finance Calculator
+    description: Financing per model, with customisable instalment and insurance parameters.
+  - name: Marvin 3
+    description: Admin dashboard for importers to configure all of the above.
+
+tech: [TypeScript, React, Redux, Redux-Saga, Jotai, TanStack Query/Table/Form, Yup, MUI,
+       ASP.NET Core, Cypress, Storybook, FeatureHub, Google Maps API, npm workspaces,
+       Azure DevOps, Git]

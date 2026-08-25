@@ -1,0 +1,33 @@
+# Group names are kept to one word where possible: the label column is narrow, and a
+# wrapped label costs a line and makes the row harder to scan.
+#
+# Deliberately NOT here, though they remain visible in the older roles' tech lines:
+#   VB.NET, WinForms, WPF, Roslyn, Angular Material, Refit, Google Maps API.
+#   A skills section should read as what you want to be hired for, not everything
+#   you have ever touched. Same reason Enzyme, Cordova, Xamarin and "Azure (basics)"
+#   came off the original CV.
+
+groups:
+  - name: Architecture
+    # Nothing goes in this section that you would not want to be questioned on.
+    items: [Microfrontends (FeatureHub), Microservices, REST API design,
+            Design systems & component libraries, Monorepo tooling]
+
+  - name: Frontend
+    items: [TypeScript, React, Redux, Redux-Saga, Jotai, TanStack Query/Table/Form,
+            React Router, MUI, Yup, Vite, Storybook, Angular, NgRx, RxJS,
+            Electron (desktop), Capacitor (mobile)]
+
+  - name: Backend
+    items: [C#, ASP.NET Core, Node.js, Express, Entity Framework Core, MediatR,
+            SignalR, RabbitMQ, Ocelot, OAuth 2.0 / IdentityServer, SQL, RavenDB]
+
+  - name: AI & LLM
+    items: [Ollama / local LLM serving, LLM agent & tool design, Agentic workflows
+            (Claude Code), Kokoro TTS, Prompt & policy design]
+
+  - name: Testing
+    items: [Cypress, Playwright, Vitest, Jest, Component & visual regression testing]
+
+  - name: Delivery
+    items: [Docker, Azure DevOps, GitHub Actions, Git, Azure]

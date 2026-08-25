@@ -1,0 +1,17 @@
+{
+  "name": "cv-builder",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Data-driven CV builder: YAML content -> HTML -> PDF",
+  "scripts": {
+    "build": "node src/build.js",
+    "html": "node src/build.js --html-only",
+    "watch": "node src/build.js --watch",
+    "check": "node src/build.js --check"
+  },
+  "dependencies": {
+    "puppeteer-core": "^23.11.1",
+    "yaml": "^2.6.1"
+  }
+}

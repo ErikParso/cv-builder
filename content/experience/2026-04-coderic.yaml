@@ -1,0 +1,35 @@
+role: Senior Software Engineer
+company: Coderic s.r.o.
+location: Zilina, Slovakia
+start: 2026-04
+end: present
+
+summary: >-
+  Product and open-source engineering across the stack: a published component library,
+  LLM-backed services and real-time data systems, each taken from idea to deployment.
+
+# Each project: what it does, then what it is built with. No metrics, no internals -
+# a reader wants to know the shape of the work and whether the stack matches theirs.
+projects:
+  - name: mui-tanstack-table
+    description: >-
+      Open-source component library (MIT, published to npm) pairing MUI rendering
+      components with TanStack Table, so the consumer keeps table state and logic and
+      gets the UI for free.
+    tech: [TypeScript, React, MUI, TanStack Table, Vite, Storybook, Cypress,
+           GitHub Actions]
+
+  - name: EVE Copilot
+    description: >-
+      Live market analysis and route optimiser for an online game. Holds ~1.5M live
+      market orders in memory, kept fresh by a crawler tuned around the source API's
+      rate limits, and ranks trading and hauling opportunities on a single score. Ships
+      with a voice companion on a locally hosted language model.
+    tech: [TypeScript, Express, React, jotai, MUI, TanStack Query, Ollama, Kokoro TTS,
+           Vitest, Playwright, Docker]
+
+  - name: Agentic trading system
+    description: >-
+      An LLM proposes orders against a live exchange; every one passes through a single
+      preflight gate enforcing a kill switch, policy limits and an audit log.
+    tech: [Node.js, LLM agents, Exchange REST API]

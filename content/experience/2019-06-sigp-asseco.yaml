@@ -1,0 +1,26 @@
+role: Software Developer
+company: SIGP Systems
+client: Asseco Solutions
+location: Zilina, Slovakia
+start: 2019-06
+# Trimmed from 2019-10 so it does not overlap the Skoda role starting 2019-09.
+# Reads as a clean handover between SIGP clients, with no gap either side.
+end: 2019-08
+
+# A three-month engagement from 2019 - the summary line carries it. `compact` drops the
+# bullets without moving `compactBefore`, which would catch KROS too.
+compact: true
+
+summary: >-
+  Built Clients Manager for Helios Green, a desktop tool for managing local installations
+  of the Helios Green economic-data client.
+
+highlights:
+  - Built an Electron desktop app (Angular front end) over a locally hosted ASP.NET Core
+    Windows service, with SignalR pushing live installation progress to a tray client.
+  - Shipped it as a self-updating MSI package.
+  - Contributed to the design of the new Helios Green client look, and analysed the
+    existing installation processes the tool had to replace.
+
+tech: [C#, ASP.NET Core, MediatR, SignalR, WPF, Angular, Angular Material, NgRx, RxJS,
+       Electron]
