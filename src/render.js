@@ -10,6 +10,15 @@ const inline = (s) => esc(s).replace(/\s+/g, ' ').trim()
   .replace(/(?<![*\w])\*(?!\s)(.+?)(?<!\s)\*(?!\*)/g, '<em>$1</em>')
   .replace(/`(.+?)`/g, '<code>$1</code>');
 
+/**
+ * Dot-separated list that only wraps between items: each item is unbreakable (so
+ * "AI-assisted" never splits at its hyphen) and carries its trailing dot, so a
+ * wrapped line never starts with "·".
+ */
+const dotList = (items) => items
+  .map((it, i) => `<span class="nw">${esc(it)}${i < items.length - 1 ? '&nbsp;·' : ''}</span>`)
+  .join(' ');
+
 const tag = (name, cls, html) => (html ? `<${name} class="${cls}">${html}</${name}>` : '');
 const section = (title, body) => (body ? `<section class="sec"><h2>${esc(title)}</h2>${body}</section>` : '');
 
@@ -44,7 +53,7 @@ function role(r, cfg) {
   const showProjects = !compact || cfg.experience?.showProjectsWhenCompact;
   const projects = !showProjects ? '' : (r.projects ?? []).map((pr) =>
     `<li><span class="pname">${esc(pr.name)}</span>: ${inline(pr.description)}${
-      (pr.tech ?? []).length ? `<span class="ptech">${pr.tech.map(esc).join(' · ')}</span>` : ''
+      (pr.tech ?? []).length ? `<span class="ptech">${dotList(pr.tech)}</span>` : ''
     }</li>`).join('');
 
   return `<article class="role${compact ? ' compact' : ''}">
@@ -62,7 +71,7 @@ function role(r, cfg) {
     ${tag('p', 'rsummary', r.summary ? inline(r.summary) : '')}
     ${tag('ul', 'bullets', bullets)}
     ${projects ? `<div class="projects"><span class="plabel">Selected work</span><ul>${projects}</ul></div>` : ''}
-    ${(r.tech ?? []).length ? `<p class="tech">${r.tech.map(esc).join(' · ')}</p>` : ''}
+    ${(r.tech ?? []).length ? `<p class="tech">${dotList(r.tech)}</p>` : ''}
   </article>`;
 }
 
@@ -73,20 +82,23 @@ const renderers = {
 
   skills: (c) => section('Skills', c.skills.filter((g) => (g.items ?? []).length).map((g) =>
     `<div class="skillrow"><span class="skname">${esc(g.name)}</span><span class="skitems">${
-      g.items.map(esc).join(' · ')}</span></div>`).join('')),
+      dotList(g.items)}</span></div>`).join('')),
 
-  education: (c) => section('Education', c.education.map((e) => `<article class="edu">
-      <div class="rhead">
-        <div>
-          <h3>${esc(e.degree)}</h3>
-          <p class="org">${esc(e.school)}</p>
-        </div>
-        <div class="meta">
-          <span class="dates">${esc(formatRange(e._start, e._end))}</span>
-          ${e.location ? `<span class="loc">${esc(e.location)}</span>` : ''}
-        </div>
+  // Consecutive degrees from the same school share one school line instead of repeating it.
+  education: (c) => section('Education', c.education
+    .reduce((groups, e) => {
+      const last = groups.at(-1);
+      if (last && last.school === e.school) last.items.push(e);
+      else groups.push({ school: e.school, location: e.location, items: [e] });
+      return groups;
+    }, [])
+    .map((g) => `<article class="edu">
+      ${g.items.map((e) => `<div class="rhead edu-row">
+        <h3>${esc(e.degree)}</h3>
+        <span class="dates">${esc(formatRange(e._start, e._end))}</span>
       </div>
-      ${tag('p', 'rsummary', e.note ? inline(e.note) : '')}
+      ${tag('p', 'rsummary', e.note ? inline(e.note) : '')}`).join('')}
+      <p class="org">${esc(g.school)}${g.location ? `<span class="sep">·</span>${esc(g.location)}` : ''}</p>
     </article>`).join('')),
 
   languages: (c) => section('Languages', !c.languages.length ? '' :

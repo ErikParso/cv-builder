@@ -20,11 +20,12 @@ groups:
 
   - name: Backend
     items: [C#, ASP.NET Core, Node.js, Express, Entity Framework Core, MediatR,
-            SignalR, RabbitMQ, Ocelot, OAuth 2.0 / IdentityServer, SQL, RavenDB]
+            SignalR, RabbitMQ, Ocelot, "OAuth 2.0 (IdentityServer, Google Sign-In)",
+            SQL, PostgreSQL, RavenDB]
 
   - name: AI & LLM
-    items: [Ollama / local LLM serving, LLM agent & tool design, Agentic workflows
-            (Claude Code), Kokoro TTS, Prompt & policy design]
+    items: [LLM application development, Prompt engineering, Ollama (local models),
+            Agentic workflows, AI-assisted development, TTS (Kokoro)]
 
   - name: Testing
     items: [Cypress, Playwright, Vitest, Jest, Component & visual regression testing]

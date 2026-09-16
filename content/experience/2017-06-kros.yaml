@@ -5,24 +5,24 @@ start: 2017-06
 end: 2019-05
 
 summary: >-
-  Desktop and web development across KROS's payroll (Olymp) and construction-budgeting
-  (CENKROS) products, plus internal tooling.
+  Desktop and web development on KROS's commercial software products.
 
-highlights:
-  # A bullet containing ": " must be a block scalar (`>-`), or YAML reads it as a key.
-  - >-
-    CENKROS: built the Excel Universal import tool end to end, then moved onto the
-    backend of a new modular web platform for managing and viewing BIM building models.
-  - >-
-    Built that platform's backend as microservices: independently deployable services
-    behind an Ocelot API gateway, with RabbitMQ messaging and IdentityServer4 auth.
-  - >-
-    Olymp Troubleshooter (master's thesis, productised): a module that repairs known
-    defects on a user's machine without waiting for a fix release, using ECDSA-signed
-    repair files from a web service.
-  - >-
-    Olymp: migrated reporting from SAP Crystal Reports to DevExpress, plus internal
-    tooling for cross-application data migration and payout reporting.
+projects:
+  - name: CENKROS
+    description: >-
+      Construction budgeting software. Built the Excel Universal import tool end to end,
+      then the backend of its new modular web platform for BIM building models, built as
+      microservices behind an Ocelot API gateway with RabbitMQ messaging and
+      IdentityServer4 auth.
+  - name: Olymp Troubleshooter
+    description: >-
+      Master's thesis, productised. A module that repairs known defects on a user's
+      machine without waiting for a fix release, using ECDSA-signed repair files from a
+      web service.
+  - name: Olymp
+    description: >-
+      Payroll software. Migrated reporting from Crystal Reports to DevExpress, plus
+      internal data-migration tooling.
 
 tech: [C#, VB.NET, WinForms, WPF, Roslyn, ASP.NET Core, Angular, Entity Framework,
        SQL, RavenDB, IdentityServer4, RabbitMQ, SignalR, Ocelot, Refit, Azure]

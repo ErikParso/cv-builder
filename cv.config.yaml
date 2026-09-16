@@ -8,7 +8,7 @@ output:
 
 page:
   format: A4
-  margin: { top: 10mm, right: 13mm, bottom: 10mm, left: 13mm }
+  margin: { top: 9mm, right: 13mm, bottom: 9mm, left: 13mm }
 
 theme:
   # Webfonts are fetched by Chrome at build time, so a build needs network access the
