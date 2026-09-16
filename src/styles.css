@@ -215,3 +215,6 @@ code {
 
 /* List items in skills and tech lines wrap only between items (see dotList). */
 .nw { white-space: nowrap; }
+
+/* Avoid a lone word on the last line of a paragraph or bullet. */
+.summary, .rsummary, .bullets li, .projects li { text-wrap: pretty; }
